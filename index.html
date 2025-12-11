@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevOps 3-Tier App</title>
+</head>
+<body>
+    <h1>Frontend Successfully Deployed!</h1>
+    <p>This is served by EC2 (Tier 1).</p>
+
+    <button onclick="callApi()">Call Backend API</button>
+
+    <p id="result"></p>
+
+    <script>
+        async function callApi() {
+            const response = await fetch('/api/hello');
+            const data = await response.text();
+            document.getElementById('result').innerText = data;
+        }
+    </script>
+</body>
+</html>
